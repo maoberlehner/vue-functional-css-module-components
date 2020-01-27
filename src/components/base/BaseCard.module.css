@@ -1,0 +1,11 @@
+.--size-s {
+  padding: 1em;
+}
+
+.--size-m {
+  color: 2em;
+}
+
+.is-active {
+  color: red;
+}

@@ -1,0 +1,34 @@
+{
+  "name": "vue-functional-css-module-components",
+  "version": "0.1.0",
+  "author": "Markus Oberlehner",
+  "homepage": "https://github.com/maoberlehner/vue-functional-css-module-components",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vue/cli-plugin-babel": "^4.1.1",
+    "@vue/cli-plugin-unit-jest": "^4.1.1",
+    "@vue/cli-service": "^4.1.1",
+    "@xstate/test": "^0.2.0",
+    "chai": "^4.2.0",
+    "vue": "^2.6.11",
+    "vue-template-compiler": "^2.6.11",
+    "xstate": "^4.7.3"
+  },
+  "devDependencies": {
+    "@avalanche/eslint-config": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.1.1",
+    "@vue/test-utils": "1.0.0-beta.30",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-vue": "^6.0.1"
+  }
+}
