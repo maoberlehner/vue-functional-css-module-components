@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import BaseCard from './components/base/BaseCard.vue';
+import { BaseCard } from './components/base';
 
 export default {
   name: `App`,
