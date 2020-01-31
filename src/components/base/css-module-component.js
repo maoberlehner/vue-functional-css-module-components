@@ -14,7 +14,7 @@ export default function makeCssModuleComponent({
   styles,
   suffixes = [`xs`, `s`, `m`, `l`, `xl`, `2xl`, `3xl`],
 }) {
-  const props = parseProps({ styles, prefixes, suffixes });
+  const parsedProps = parseProps({ styles, prefixes, suffixes });
   return {
     name,
     functional: true,
@@ -24,13 +24,12 @@ export default function makeCssModuleComponent({
         default: `div`,
       },
     },
-    render(h, context) {
+    render(h, { children, data, props }) {
       const componentData = {
         class: styles.root,
       };
-      const data = mergeData(context.data, componentData);
 
-      return h(context.props.tag, data, context.children);
+      return h(props.tag, mergeData(data, componentData), children);
     },
   };
 }
