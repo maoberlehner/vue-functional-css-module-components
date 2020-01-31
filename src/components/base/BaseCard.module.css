@@ -1,3 +1,7 @@
+.root {
+  border: 1px solid red;
+}
+
 .--size-s {
   padding: 1em;
 }

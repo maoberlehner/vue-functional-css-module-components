@@ -1,3 +1,5 @@
+import { mergeData } from 'vue-functional-data-merge';
+
 function parseProps({ styles, prefixes, suffixes }) {
   const selectors = Object.keys(styles);
   const states = selectors.filter(selector => prefixes.some(prefix => selector.startsWith(prefix)));
@@ -23,7 +25,12 @@ export default function makeCssModuleComponent({
       },
     },
     render(h, context) {
-      return h(context.props.tag, context.data, context.children);
+      const componentData = {
+        class: styles.root,
+      };
+      const data = mergeData(context.data, componentData);
+
+      return h(context.props.tag, data, context.children);
     },
   };
 }
