@@ -1,4 +1,4 @@
-# Vue.js Functional CSS Module Components
+# Vue.js Functional Base Components Powered by CSS Modules
 
 [![Patreon](https://img.shields.io/badge/patreon-donate-blue.svg)](https://www.patreon.com/maoberlehner)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/maoberlehner)

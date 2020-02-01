@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>Vue.js Functional CSS Module Components</h1>
+    <h1>Vue.js Functional Base Components Powered by CSS Modules</h1>
     <div class="demo">
       <BaseLayout gap="m">
         <BaseLayoutItem
