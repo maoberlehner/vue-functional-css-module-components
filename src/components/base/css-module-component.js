@@ -9,6 +9,11 @@ const SUFFIXES = {
   modifier: [`-2xs`, `-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl`, `-4xl`, /-(.+)\/(.+)[@(.+)]?$/],
 };
 
+// See: https://stackoverflow.com/a/6661012
+function toCamelCase(string) {
+  return string.replace(/-([a-z])/g, m => m[1].toUpperCase());
+}
+
 function makeValidator({ name, options }) {
   return function validator(value) {
     const values = Array.isArray(value) ? value : [value];
@@ -30,7 +35,7 @@ function parseProps({ styles }) {
   const states = selectors.filter(selector => selector.startsWith(PREFIXES.state));
   // eslint-disable-next-line no-restricted-syntax
   for (const state of states) {
-    const name = state.replace(new RegExp(`^${PREFIXES.state}`), ``);
+    const name = toCamelCase(state);
     props[name] = {
       default: false,
       meta: {

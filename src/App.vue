@@ -36,7 +36,7 @@
         <BaseLayoutItem
           :width="['12/12', '6/12@m', '3/12@l']"
         >
-          <BaseCard>
+          <BaseCard is-active>
             <BaseCardFigure
               tag="img"
               src="https://via.placeholder.com/250x140"
