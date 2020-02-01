@@ -9,6 +9,20 @@ const SUFFIXES = {
   modifier: [`-2xs`, `-xs`, `-s`, `-m`, `-l`, `-xl`, `-2xl`, `-3xl`, `-4xl`, /-(.+)\/(.+)[@(.+)]?$/],
 };
 
+function makeValidator({ name, options }) {
+  return function validator(value) {
+    const values = Array.isArray(value) ? value : [value];
+    const isValid = values.every(x => options.includes(x));
+    if (!isValid) {
+      // eslint-disable-next-line no-console
+      console.error(
+        `Available options for \`${name}\` are: ${options.map(x => `\`${x}\``).join(`, `)}.`,
+      );
+    }
+    return isValid;
+  };
+}
+
 function parseProps({ styles }) {
   const props = {};
   const selectors = Object.keys(styles);
@@ -55,13 +69,14 @@ function parseProps({ styles }) {
   }
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const groupName of Object.keys(groups)) {
-    props[groupName] = {
+  for (const name of Object.keys(groups)) {
+    props[name] = {
       default: null,
       meta: {
-        class: `${PREFIXES.modifier}${groupName}-`,
+        class: `${PREFIXES.modifier}${name}-`,
       },
       type: [Array, String],
+      validator: makeValidator({ name, options: groups[name] }),
     };
   }
 
