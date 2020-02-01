@@ -34,7 +34,6 @@ function parseProps({ styles }) {
     props[name] = {
       default: false,
       meta: {
-        // type: TYPES.state,
         class: state,
       },
       type: Boolean,
@@ -60,7 +59,6 @@ function parseProps({ styles }) {
       props[name] = {
         default: false,
         meta: {
-          // type: TYPES.modifier,
           class: modifier,
         },
         type: Boolean,
