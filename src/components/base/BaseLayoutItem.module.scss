@@ -1,0 +1,17 @@
+@import '../../scss/variables';
+
+.--width-12\/12 {
+  width: 100%;
+}
+
+.--width-6\/12\@m {
+  @media (min-width: $breakpoint-m) {
+    width: 50%;
+  }
+}
+
+.--width-3\/12\@l {
+  @media (min-width: $breakpoint-l) {
+    width: 25%;
+  }
+}

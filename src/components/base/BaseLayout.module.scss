@@ -1,0 +1,36 @@
+@import '../../scss/variables';
+
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.--gap-s {
+  margin-top: -$spacing-s;
+  margin-left: -$spacing-s;
+
+  > * {
+    padding-top: $spacing-s;
+    padding-left: $spacing-s;
+  }
+}
+
+.--gap-m {
+  margin-top: -$spacing-m;
+  margin-left: -$spacing-m;
+
+  > * {
+    padding-top: $spacing-m;
+    padding-left: $spacing-m;
+  }
+}
+
+.--gap-l {
+  margin-top: -$spacing-l;
+  margin-left: -$spacing-l;
+
+  > * {
+    padding-top: $spacing-l;
+    padding-left: $spacing-l;
+  }
+}
